@@ -1,6 +1,6 @@
 { delib, pkgs, ... }:
 delib.module {
-  name = "programs.vscodeRemote";
+  name = "programs.vscode-remote";
 
   options = delib.singleEnableOption false;
 

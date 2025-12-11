@@ -1,12 +1,7 @@
-Core -> Env -> Host
+## NixOS-WSL
 
-wsl -> init -> nixos wsl -> laptop (std) -> doctor -> desktop (std) -> erudite
-baremetal -> server (std) -> prts -> nix-dokploy
+### Init
 
-# Env
-
-init: std: laptop desktop server
-
-## Feature
-
-init: vscode-remote direnv
+```bash
+sudo nixos-rebuild switch --flake github:songpola/nixos-config-ng#wsl-init
+```

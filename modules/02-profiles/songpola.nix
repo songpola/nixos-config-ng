@@ -7,8 +7,7 @@ delib.module {
   myconfig.ifEnabled =
     { cfg, ... }:
     {
-      nix.binaryCache = {
-        enable = true;
+      binaryCache.client = {
         targets = [
           {
             url = "ssh-ng://${username}@prts.tail7623c.ts.net";

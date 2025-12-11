@@ -1,6 +1,6 @@
 { delib, ... }:
 delib.module {
-  name = "nix.binaryCache";
+  name = "binaryCache.client";
 
   options =
     with delib;
