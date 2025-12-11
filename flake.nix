@@ -1,4 +1,13 @@
 {
+  nixConfig = {
+    extra-substituters = [
+      "http://prts.tail7623c.ts.net:5000"
+    ];
+    extra-trusted-public-keys = [
+      "prts-1:js8+ltSqLuUR06p1IMycRJtBTINqBlIK7vv5c3ZNnuw="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
