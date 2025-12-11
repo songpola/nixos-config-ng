@@ -1,7 +1,6 @@
 {
   delib,
   host,
-  pkgs,
   ...
 }:
 delib.module {
@@ -20,15 +19,5 @@ delib.module {
     };
 
     devenv.nix.enable = true;
-  };
-
-  nixos.ifEnabled = {
-    # Essential packages
-    environment.systemPackages = with pkgs; [
-      nh
-      micro
-      git
-      jujutsu
-    ];
   };
 }

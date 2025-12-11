@@ -1,7 +1,7 @@
 {
   delib,
   options,
-  config,
+  pkgs,
   ...
 }:
 # This host is designed to be used as the initial environment
@@ -12,8 +12,18 @@ delib.host {
   features = [ "wsl" ];
   system = "x86_64-linux";
 
-  homeManagerUser = config.wsl.defaultUser;
+  homeManagerUser = options.wsl.defaultUser.default;
 
   nixos.system.stateVersion = options.system.stateVersion.default;
   home.home.stateVersion = options.system.stateVersion.default;
+
+  nixos = {
+    # Essential packages
+    environment.systemPackages = with pkgs; [
+      nh
+      micro
+      git
+      jujutsu
+    ];
+  };
 }

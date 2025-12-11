@@ -7,13 +7,11 @@ delib.module {
   myconfig.ifEnabled =
     { cfg, ... }:
     {
-      binaryCache.client = {
-        targets = [
-          {
-            url = "ssh-ng://${username}@prts.tail7623c.ts.net";
-            signingPublicKey = "prts-1:js8+ltSqLuUR06p1IMycRJtBTINqBlIK7vv5c3ZNnuw=";
-          }
-        ];
-      };
+      binaryCache.client.targets = [
+        {
+          url = "ssh-ng://songpola@prts.tail7623c.ts.net";
+          signingPublicKey = "prts-1:js8+ltSqLuUR06p1IMycRJtBTINqBlIK7vv5c3ZNnuw=";
+        }
+      ];
     };
 }

@@ -1,6 +1,9 @@
 final: prev:
 let
-  env = [ "init" ];
+  env = [
+    "init"
+    "std"
+  ];
   core = [ "wsl" ];
 in
 {
