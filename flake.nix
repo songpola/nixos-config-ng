@@ -1,4 +1,5 @@
 {
+  # Useful for wsl-init host
   nixConfig = {
     extra-substituters = [
       "http://prts.tail7623c.ts.net:5000"
@@ -30,10 +31,7 @@
 
   outputs =
     {
-      self,
-      nixpkgs,
       flakelight,
-      nixos-wsl,
       denix,
       ...
     }@inputs:
@@ -43,7 +41,11 @@
       nixosConfigurations = denix.lib.configurations {
         moduleSystem = "nixos";
         homeManagerUser = "songpola";
-        paths = [ ./modules ];
+        paths = [
+          ./10-hosts
+          ./20-config
+          ./30-modules
+        ];
         extensions = with denix.lib.extensions; [
           args
           (base.withConfig (import ./base-config.nix))

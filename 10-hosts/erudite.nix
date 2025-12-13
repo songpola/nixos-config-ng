@@ -4,8 +4,7 @@
 }:
 delib.host {
   name = "erudite";
-  type = "std";
-  features = [ "wsl" ];
+  type = "wsl";
   system = "x86_64-linux";
 
   nixos.system.stateVersion = "25.11";

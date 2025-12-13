@@ -2,14 +2,13 @@
   delib,
   host,
   inputs,
-  pkgs,
+  # pkgs,
   ...
 }:
 delib.module {
-  # This module enables WSL support if the host is WSL
-  name = "core.wsl";
+  name = "types.wsl";
 
-  options = delib.singleEnableOption host.wslFeatured;
+  options = delib.singleEnableOption host.isWsl;
 
   nixos.always.imports = [ inputs.nixos-wsl.nixosModules.default ];
 
@@ -17,6 +16,6 @@ delib.module {
     wsl.enable = true;
 
     # Enable xdg-open for opening files and URLs in WSL
-    environment.systemPackages = [ pkgs.xdg-utils ];
+    # environment.systemPackages = [ pkgs.xdg-utils ];
   };
 }

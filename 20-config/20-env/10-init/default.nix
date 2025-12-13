@@ -1,16 +1,13 @@
 {
   delib,
-  host,
   ...
 }:
 delib.module {
   name = "env.init";
 
-  options = delib.singleEnableOption host.isInit;
+  options = delib.singleEnableOption false;
 
   myconfig.ifEnabled = {
-    nix.experimental-features.enable = true;
-
     binaryCache.client.enable = true;
 
     programs = {
@@ -19,5 +16,13 @@ delib.module {
     };
 
     devenv.nix.enable = true;
+  };
+
+  nixos.ifEnabled = {
+    nix.settings.experimental-features = [
+      "flakes"
+      "nix-command"
+      "pipe-operators"
+    ];
   };
 }

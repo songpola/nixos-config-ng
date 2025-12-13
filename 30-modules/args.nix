@@ -1,6 +1,6 @@
 { delib, ... }:
 delib.module {
-  name = "default";
+  name = "args";
 
   myconfig.always =
     { myconfig, ... }:

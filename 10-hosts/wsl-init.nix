@@ -8,14 +8,15 @@
 # for a fresh NixOS-WSL installation.
 delib.host {
   name = "wsl-init";
-  type = "init";
-  features = [ "wsl" ];
+  type = "wsl";
   system = "x86_64-linux";
 
   homeManagerUser = options.wsl.defaultUser.default;
 
   nixos.system.stateVersion = options.system.stateVersion.default;
   home.home.stateVersion = options.system.stateVersion.default;
+
+  myconfig.env.init.enable = true;
 
   nixos = {
     # Essential packages

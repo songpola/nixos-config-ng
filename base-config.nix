@@ -1,16 +1,11 @@
-final: prev:
-let
-  env = [
-    "init"
-    "std"
-  ];
-  core = [ "wsl" ];
-in
-{
+final: prev: {
   args.enable = true;
   rices.enable = false;
   hosts = {
-    type.types = prev.hosts.type.types ++ env;
-    features.features = prev.hosts.features.features ++ core;
+    type.types = prev.hosts.type.types ++ [
+      "wsl"
+      "baremetal"
+    ];
+    # features.features = prev.hosts.features.features ++ [ "" ];
   };
 }

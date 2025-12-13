@@ -6,7 +6,7 @@
 delib.module {
   name = "env.std";
 
-  options = delib.singleEnableOption host.isStd;
+  options = delib.singleEnableOption false;
 
   myconfig.ifEnabled.env.init.enable = true;
 
